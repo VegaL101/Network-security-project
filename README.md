@@ -24,12 +24,8 @@ Firstly we add our two routers with 3 switches for each router. We set up our la
 
 We then add our end devices. we'll only be using PCs for this project. There will be 12 PCs in total, 3 for a switch on each floor. We have them set up like below.
 
-
-
-##
-
 ![(2)add all end devices](https://github.com/user-attachments/assets/903018d6-f562-4940-aa8b-fd33d258e3cf)
 
-
+##
 Step 2:
 Convert the string into a list.
