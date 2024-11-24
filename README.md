@@ -16,16 +16,19 @@ Our objective is to simulate two networks separated by three VLANs per site, whi
 Step 1:
 Create the network layout
 
-Firstly we add our two routers with four switches for each router. We set up our layout like below.
+Firstly we add our two routers with 3 switches for each router. We set up our layout like below.
  
-![(1)routerswitcheslayout](https://github.com/user-attachments/assets/4fb1644d-5034-46fb-a462-535712f0ea09)
+![(1)routerswitcheslayout](https://github.com/user-attachments/assets/855dfab8-c967-434a-8cbb-6ae8581f033b)
 
 ##
 
-We then add our end devices. we'll only be using PCs for this project. There will be 18 PCs in total, 3 for every switch.
+We then add our end devices. we'll only be using PCs for this project. There will be 12 PCs in total, 3 for a switch on each floor. We have them set up like below.
+
+![(2)add all end devices](https://github.com/user-attachments/assets/447d0936-2cb2-49e1-896a-e20540053276)
+
+##
 
 
-The with statement is used with the .open()  function to open and read the contents of the file. The output of the code is stored within a file variable which has the .read()  function applied to it which converts the file to a string which can be read. Then we assign that within the ip_addresses variable.
 
 Step 2:
 Convert the string into a list.
