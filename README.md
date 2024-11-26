@@ -39,6 +39,10 @@ Every PC in the accounting department will be connected to fa 0/1 of every switc
 All the PCs in Sales will be connected to fa 0/2for their switch.<br>
 And then the Delivery PCs will be connected to fa 0/3 on their respective floor.
 
+i added some color to the layout to help organize things.
+
+![(3)connections added](https://github.com/user-attachments/assets/02863713-bb14-432f-9f79-df35ff33375f)
+
 ##
 
 
