@@ -28,5 +28,17 @@ We then add our end devices. we'll only be using PCs for this project. There wil
 
 
 ##
-Step 2:
-Convert the string into a list.
+
+Here, I have made all the connections for all the devices and oranized all the PCs into deparments. There will be one pc for every department on each floor. the connections go like this:<br>
+Site 1 router Gig 0/0 to Core switch 1 Gig 0/1<br>
+Core switch fa 0/1 to (s1) Floor 1 switch Gig 0/1<br>
+Core switch fa 0/2 to (s1) Floor 2 switch Gig 0/1<br>
+Core switch fa 0/3 to (s1) Floor 3 switch Gig 0/1<br>
+
+Every PC in the accounting department will be connected to fa 0/1 of every switch that is on their floor.<br>
+All the PCs in Sales will be connected to fa 0/2for their switch.<br>
+And then the Delivery PCs will be connected to fa 0/3 on their respective floor.
+
+##
+
+
