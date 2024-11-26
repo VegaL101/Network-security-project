@@ -41,7 +41,8 @@ And then the Delivery PCs will be connected to fa 0/3 on their respective floor.
 
 i added some color to the layout to help organize things.
 
-![(3)connections added](https://github.com/user-attachments/assets/02863713-bb14-432f-9f79-df35ff33375f)
+![(3)connections added](https://github.com/user-attachments/assets/1e699768-2e36-41b1-82bd-95d7e006eea1)
+
 
 ##
 
