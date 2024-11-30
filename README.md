@@ -46,4 +46,23 @@ i added some color to the layout to help organize things.
 
 ##
 
+As you have probably noticed by now all the light connections are lit up green except the routers to core switches. Here we enable both of our routers essentially turning them on. below we type in the following code to do so:
+
+Router>en (enable)
+Router#config t (configure terminal)
+Router (config)#int gig0/0 (the connection to our core switch)
+Router (config-if)#no shutdown (turns on interface) 
+do wr (saves our changes)
+Router(config-if)#exit 
+
+![(4)router enables](https://github.com/user-attachments/assets/5d944e46-fdc5-4c39-a8d3-aa7e277afe0a)
+
+##
+
+After doing this step on both of our routers our connection lights change from orange to green.
+
+![(5)afteren](https://github.com/user-attachments/assets/fe54139e-c988-4291-93e9-3fa5ab68b7d2)
+
+##
+
 
