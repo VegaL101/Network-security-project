@@ -59,10 +59,35 @@ Router(config-if)#exit
 
 ##
 
-After doing this step on both of our routers our connection lights change from orange to green.
+After doing this step the orange dots from our routers will turn into green flashing triangles letting us know our router is activated. You will also notice that i have added our VLANS down below. <BR>
 
-![(5)afteren](https://github.com/user-attachments/assets/fe54139e-c988-4291-93e9-3fa5ab68b7d2)
+For accounting we have VLAN 10: 192.168.10.0 <BR>
+For sales we have VLAN 20: 192.168.20.0<BR>
+And for delivery VLAN 30: 192.168.30.0
+
+![(5 5)vlans added](https://github.com/user-attachments/assets/416c9c79-5b8f-4374-b0d8-1a012b623361)
+
 
 ##
+
+Step 2:
+Configure our devices.
+
+In this step we be configuring our routers, switches, and end-devices.
+
+##
+
+First we'll start with our routers. We click on our Site 1 router and head over to the cli tab. Here we be creating Subinterfaces for each of our VLANS and then assigning them a ip address.<br>
+
+Below we have created and assigned our interface for VLAN 10. We did this by typing in:
+
+#en
+#config t
+
+![(7)VLAN router10](https://github.com/user-attachments/assets/dba0d86d-2522-44e8-8f64-c6bce489649d)
+
+
+
+
 
 
