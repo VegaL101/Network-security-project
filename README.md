@@ -83,9 +83,9 @@ Below we have created and assigned our interface for VLAN 10. We did this by typ
 
 #en<br>
 #config t<br>
-#interface gig0/0.10
-#encapsulation dot1Q 10
-#ip address 192.168.10.1 255.255.255.0
+#interface gig0/0.10<br>
+#encapsulation dot1Q 10<br>
+#ip address 192.168.10.1 255.255.255.0<br>
 #exit
 
 ![(7)VLAN router10](https://github.com/user-attachments/assets/dba0d86d-2522-44e8-8f64-c6bce489649d)
@@ -96,18 +96,18 @@ For VLAN 20:
 
 #en<br>
 #config t<br>
-#interface gig0/0.20
-#encapsulation dot1Q 20
-#ip address 192.168.20.1 255.255.255.0
+#interface gig0/0.20<br>
+#encapsulation dot1Q 20<br>
+#ip address 192.168.20.1 255.255.255.0<br>
 #exit
 
 For VLAN 30:
 
 #en<br>
 #config t<br>
-#interface gig0/0.30
-#encapsulation dot1Q 30
-#ip address 192.168.30.1 255.255.255.0
+#interface gig0/0.30<br>
+#encapsulation dot1Q 30<br>
+#ip address 192.168.30.1 255.255.255.0<br>
 #exit
 
 ## 
@@ -118,25 +118,25 @@ For VLAN 10:
 
 #en<br>
 #config t<br>
-#interface gig0/0.10
-#encapsulation dot1Q 10
-#ip address 192.168.10.2 255.255.255.0
+#interface gig0/0.10<br>
+#encapsulation dot1Q 10<br>
+#ip address 192.168.10.2 255.255.255.0<br>
 #exit
 
 VLAN 20:
 
 #en<br>
 #config t<br>
-#interface gig0/0.20
-#encapsulation dot1Q 10
-#ip address 192.168.20.2 255.255.255.0
+#interface gig0/0.20<br>
+#encapsulation dot1Q 10<br>
+#ip address 192.168.20.2 255.255.255.0<br>
 #exit
 
 VLAN 30:
 
 #en<br>
 #config t<br>
-#interface gig0/0.30
-#encapsulation dot1Q 30
-#ip address 192.168.30.2 255.255.255.0
+#interface gig0/0.30<br>
+#encapsulation dot1Q 30<br>
+#ip address 192.168.30.2 255.255.255.0<br>
 #exit
