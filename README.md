@@ -81,13 +81,62 @@ First we'll start with our routers. We click on our Site 1 router and head over 
 
 Below we have created and assigned our interface for VLAN 10. We did this by typing in:
 
-#en
-#config t
+#en<br>
+#config t<br>
+#interface gig0/0.10
+#encapsulation dot1Q 10
+#ip address 192.168.10.1 255.255.255.0
+#exit
 
 ![(7)VLAN router10](https://github.com/user-attachments/assets/dba0d86d-2522-44e8-8f64-c6bce489649d)
 
+So, after configuring our router for VLAN 10 we proceed to do this with VLAN 20 and 30. 
 
+For VLAN 20:
 
+#en<br>
+#config t<br>
+#interface gig0/0.20
+#encapsulation dot1Q 20
+#ip address 192.168.20.1 255.255.255.0
+#exit
 
+For VLAN 30:
 
+#en<br>
+#config t<br>
+#interface gig0/0.30
+#encapsulation dot1Q 30
+#ip address 192.168.30.1 255.255.255.0
+#exit
 
+## 
+
+For site router 2 we will be using the next available IPS in the VLANs to assign to our subinterfaces.
+
+For VLAN 10:
+
+#en<br>
+#config t<br>
+#interface gig0/0.10
+#encapsulation dot1Q 10
+#ip address 192.168.10.2 255.255.255.0
+#exit
+
+VLAN 20:
+
+#en<br>
+#config t<br>
+#interface gig0/0.20
+#encapsulation dot1Q 10
+#ip address 192.168.20.2 255.255.255.0
+#exit
+
+VLAN 30:
+
+#en<br>
+#config t<br>
+#interface gig0/0.30
+#encapsulation dot1Q 30
+#ip address 192.168.30.2 255.255.255.0
+#exit
