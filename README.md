@@ -150,11 +150,13 @@ VLAN 30:
 After making those chnages we can now double check that the sub interfaces are asigned properly and are up. <br>
 We do this by typing in:
 
-#en
+#en<br>
 #show ip interface brief
 
 Down below you'll see an example of what it should look like if completed.
 
 ![(8)ipbrief](https://github.com/user-attachments/assets/2794b869-793a-4beb-adec-f251e5f10a6e)
+
+Make sure to check our Site 2 router as well
 
 ##
