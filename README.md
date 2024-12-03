@@ -108,6 +108,8 @@ For VLAN 30:
 #interface gig0/0.30<br>
 #encapsulation dot1Q 30<br>
 #ip address 192.168.30.1 255.255.255.0<br>
+#exit<br>
+#do wr<br>
 #exit
 
 ## 
@@ -128,7 +130,7 @@ VLAN 20:
 #en<br>
 #config t<br>
 #interface gig0/0.20<br>
-#encapsulation dot1Q 10<br>
+#encapsulation dot1Q 20<br>
 #ip address 192.168.20.2 255.255.255.0<br>
 #exit
 
@@ -139,4 +141,20 @@ VLAN 30:
 #interface gig0/0.30<br>
 #encapsulation dot1Q 30<br>
 #ip address 192.168.30.2 255.255.255.0<br>
+#exit<br>
+#do wr<br>
 #exit
+
+##
+
+After making those chnages we can now double check that the sub interfaces are asigned properly and are up. <br>
+We do this by typing in:
+
+#en
+#show ip interface brief
+
+Down below you'll see an example of what it should look like if completed.
+
+![(8)ipbrief](https://github.com/user-attachments/assets/2794b869-793a-4beb-adec-f251e5f10a6e)
+
+##
