@@ -160,3 +160,40 @@ Down below you'll see an example of what it should look like if completed.
 Make sure to check our Site 2 router as well
 
 ##
+
+Next, we create our VLANs on our main switch. We head over to our main switch and head over to the CLI tab. Here we type the following commands.<br>
+
+For accounting:<br>
+#en<br>
+#config t<br>
+#vlan 10<br> 
+#name accounting<br>
+
+For sales:<br>
+#en<br>
+#config t<br>
+#vlan 10<br> 
+#name accounting<br>
+
+![(9)accountingvlan](https://github.com/user-attachments/assets/258cb7f6-a2ab-41f1-9d3b-cdc61645c2e5)
+
+For sales:<br>
+#en<br>
+#config t<br>
+#vlan 20<br> 
+#name sales<br>
+
+![(10)sales vlan](https://github.com/user-attachments/assets/5c5c9419-809a-413a-be58-0309b4bda32a)
+
+For delivery:<br>
+#en<br>
+#config t<br>
+#vlan 30<br> 
+#name delivery<br>
+#exit
+#do wr
+
+![(11)delivery vlan](https://github.com/user-attachments/assets/aeb1c39a-b0fc-45c6-baad-8d12e261cf82)
+
+you will wat to make sure all these configurations we are making are also being done to the site 2 main switch.
+
