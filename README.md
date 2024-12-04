@@ -197,3 +197,30 @@ For delivery:<br>
 
 you will wat to make sure all these configurations we are making are also being done to the site 2 main switch.
 
+##
+
+Then we will be enabling trunk mode on our switch which would allow our us to extend VLANs across the entire network. To do this we type:<rb>
+#en<br>
+#config t<br>
+#interface range fa 0/1-3<br>
+#switchport mode trunk<br>
+
+After this the states of the interfaces will go down but bacl up right after as seen below.
+
+![(13)switchport mode trunk](https://github.com/user-attachments/assets/c218cd0f-9f57-4e60-a318-5797c23ceb79)
+
+make sure we exit and type in 'do wr' to save our changes.
+
+##
+
+Next we check our VLANs, to do so we type: show vlan brief 
+
+![(14)vlan brief after trunk](https://github.com/user-attachments/assets/f6d679bd-710a-41cd-8135-42615ee7e87c)
+
+here we can see that our fa ports 1-3 are no longer on the active list. But, if we type: show interface trunk
+
+![(15)show interfacestrunk](https://github.com/user-attachments/assets/f4c62460-35f6-456c-aaa6-25500ed90991)
+
+You will see that our ports are there and our vlans that are allowed and active on the trunk are also there.
+
+##
