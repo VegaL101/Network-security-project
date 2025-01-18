@@ -224,3 +224,29 @@ here we can see that our fa ports 1-3 are no longer on the active list. But, if 
 You will see that our ports are there and our vlans that are allowed and active on the trunk are also there.
 
 ##
+
+Next, on every floor switch we will create our vlans. we go to our switch and type:<br>
+#en<br>
+#config t<br>
+#vlan 10<br>
+#name accounting<br>
+#vlan 20<br>
+#name sales<br>
+#vlan 30<br>
+#name delivery<br>
+#exit<br>
+#do wr<br>
+
+You can see an example down below. We do this to every floor switch on both sites.
+
+![(16)switchvlanscreation](https://github.com/user-attachments/assets/f511e3d5-4ff0-4593-8cd5-d11b7eca4251)
+
+Next, to check if our vlans were sucessfully created we type: <br>
+show vlan brief
+
+if done correctly we should see our vlans appear. You can see my example below 
+
+![(17)show vlan brief](https://github.com/user-attachments/assets/3005cd75-ccd8-4193-97bd-fa02473736cc)
+
+##
+
