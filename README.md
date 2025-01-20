@@ -250,3 +250,35 @@ if done correctly we should see our vlans appear. You can see my example below
 
 ##
 
+Now, we move onto assigning our vlans to their ports. We do this for every floor switch. We type: <br>
+#en<br>
+#config t<br>
+#interface fa 0/1<br>
+#switchport mode access<br>
+#switchport access vlan 10<br>
+#exit<br>
+#do wr<br>
+#interface fa 0/2<br>
+#switchport mode access<br>
+#switchport access vlan 20<br>
+#exit<br>
+#do wr<br>#interface fa 0/3<br>
+#switchport mode access<br>
+#switchport access vlan 30<br>
+#exit<br>
+#do wr<br>
+
+
+We have fa 0/1 for our accounting vlan, fa 0/2 for sales, and fa 0/3 for delivery. This means those specific ports can only be used by their respective vlans.
+
+##
+
+we check this by typing: #show vlan brief<br>
+
+Below we can see each vlan we previously created have the ports they were assigned to next to them. We do this for every floor switch on each site 
+
+
+
+![(20)vlanbriefs2](https://github.com/user-attachments/assets/863e3bcc-81d1-4f75-9802-52f4f4a9b788)
+
+##
