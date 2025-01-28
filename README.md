@@ -31,9 +31,9 @@ We then add our end devices. we'll only be using PCs for this project. There wil
 
 Here, I have made all the connections for all the devices and oranized all the PCs into deparments. There will be one pc for every department on each floor. the connections go like this:<br>
 Site 1 router Gig 0/0 to Core switch 1 Gig 0/1<br>
-Core switch fa 0/1 to (s1) Floor 1 switch Gig 0/1<br>
-Core switch fa 0/2 to (s1) Floor 2 switch Gig 0/1<br>
-Core switch fa 0/3 to (s1) Floor 3 switch Gig 0/1<br>
+Main switch fa 0/1 to (s1) Floor 1 switch Gig 0/1<br>
+Main switch fa 0/2 to (s1) Floor 2 switch Gig 0/1<br>
+Main switch fa 0/3 to (s1) Floor 3 switch Gig 0/1<br>
 
 Every PC in the accounting department will be connected to fa 0/1 of every switch that is on their floor.<br>
 All the PCs in Sales will be connected to fa 0/2for their switch.<br>
@@ -48,12 +48,12 @@ i added some color to the layout to help organize things.
 
 As you have probably noticed by now all the light connections are lit up green except the routers to core switches. Here we enable both of our routers essentially turning them on. below we type in the following code to do so:
 
-Router>en (enable)
-Router#config t (configure terminal)
-Router (config)#int gig0/0 (the connection to our core switch)
-Router (config-if)#no shutdown (turns on interface) 
-do wr (saves our changes)
-Router(config-if)#exit 
+#Router>en (enable)<br>
+#Router#config t (configure terminal)<br>
+#Router (config)#int gig0/0 (the connection to our core switch)<br>
+#Router (config-if)#no shutdown (turns on interface)<br> 
+#do wr (saves our changes)<br>
+#Router(config-if)#exit 
 
 ![(4)router enables](https://github.com/user-attachments/assets/5d944e46-fdc5-4c39-a8d3-aa7e277afe0a)
 
@@ -63,7 +63,9 @@ After doing this step the orange dots from our routers will turn into green flas
 
 For accounting we have VLAN 10: 192.168.10.0 <BR>
 For sales we have VLAN 20: 192.168.20.0<BR>
-And for delivery VLAN 30: 192.168.30.0
+And for delivery VLAN 30: 192.168.30.0<br>
+
+These will be specifically for Site 1
 
 ![(5 5)vlans added](https://github.com/user-attachments/assets/416c9c79-5b8f-4374-b0d8-1a012b623361)
 
