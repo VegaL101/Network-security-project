@@ -244,3 +244,18 @@ Below we can see each vlan we previously created have the ports they were assign
 ![(20)vlanbriefs2](https://github.com/user-attachments/assets/863e3bcc-81d1-4f75-9802-52f4f4a9b788)
 
 ##
+
+Next, we wil move to IP configurations on our PCs.
+
+First we will be on PC0, click on the 'Desktop' table and head over to IP configuration. For this project will be setting using a static IPV4 addres.
+
+For my IPv4 Address i set it to: 192.168.10.4 (this will be the address for this device)
+
+For Subnet Mask i gave it: 255.255.255.0 ()
+
+For Default Gateway i set it as: 192.168.10.1
+
+
+![(28 5)switchaddedandupdated look](https://github.com/user-attachments/assets/0278cc80-6a0e-492a-aa26-9437de6c42a0)
+
+
