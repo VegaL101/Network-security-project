@@ -2,14 +2,13 @@
 
 ## Objective
 
-Our objective is to simulate two networks separated by three VLANs per site, while enhancing their security posture through the implementation of firewalls, DMZs (Demilitarized Zones), and site-to-site VPNs. 
+Our objective is to simulate a network in a 3 floor office building with three VLANs, with one switch per floor. wWhile enhancing their security posture through the implementation of firewalls and DMZs (Demilitarized Zones).
 
 ### Skills Learned
 
 - Learned how to implement VLANs
 - configure firewalls
 - Configure DMZ
-- Configure site-to-site VPN
 
 ## Steps
 
@@ -18,13 +17,15 @@ Create the network layout
 
 Firstly we add our two routers with 3 switches for each router. We set up our layout like below.
  
-![(1)routerswitcheslayout](https://github.com/user-attachments/assets/855dfab8-c967-434a-8cbb-6ae8581f033b)
+![(1)routerswitcheslayout](https://github.com/user-attachments/assets/94e0821f-c7b9-4cb4-bcca-58cfeaf37cfd)
+
 
 ##
 
-We then add our end devices. we'll only be using PCs for this project. There will be 12 PCs in total, 3 for a switch on each floor. We have them set up like below.
+We then add our end devices. we'll only be using PCs for this project. There will be 9 PCs in total, 3 for each switch on each floor. We have them set up like below.
 
-![(2)add all end devices](https://github.com/user-attachments/assets/90da6bad-c85d-4433-b8a0-25b887320e75)
+
+ ![(2)add all end devices](https://github.com/user-attachments/assets/aee8ca2e-60d7-4ad0-b660-0b77d20bc941)
 
 
 ##
@@ -35,13 +36,14 @@ Main switch fa 0/1 to (s1) Floor 1 switch Gig 0/1<br>
 Main switch fa 0/2 to (s1) Floor 2 switch Gig 0/1<br>
 Main switch fa 0/3 to (s1) Floor 3 switch Gig 0/1<br>
 
-Every PC in the accounting department will be connected to fa 0/1 of every switch that is on their floor.<br>
-All the PCs in Sales will be connected to fa 0/2for their switch.<br>
-And then the Delivery PCs will be connected to fa 0/3 on their respective floor.
+Every PC in the accounting department will be connected to port fa 0/1 of every switch on their floor.<br>
+All the PCs in Sales will be connected to fa 0/2 for every switch.<br>
+Lastly, the Delivery PCs will be connected to fa 0/3 on each switch.
 
 i added some color to the layout to help organize things.
 
-![(3)connections added](https://github.com/user-attachments/assets/1e699768-2e36-41b1-82bd-95d7e006eea1)
+![(3)connections added](https://github.com/user-attachments/assets/0e08d06f-6b36-4ac8-96e9-23fc6f0d2d69)
+
 
 
 ##
@@ -65,10 +67,7 @@ For accounting we have VLAN 10: 192.168.10.0 <BR>
 For sales we have VLAN 20: 192.168.20.0<BR>
 And for delivery VLAN 30: 192.168.30.0<br>
 
-These will be specifically for Site 1
-
-![(5 5)vlans added](https://github.com/user-attachments/assets/416c9c79-5b8f-4374-b0d8-1a012b623361)
-
+![(5 5)vlans added](https://github.com/user-attachments/assets/75e18e52-107e-4ddb-b27c-1dcbc8c0b881)
 
 ##
 
@@ -79,7 +78,7 @@ In this step we be configuring our routers, switches, and end-devices.
 
 ##
 
-First we'll start with our routers. We click on our Site 1 router and head over to the cli tab. Here we be creating Subinterfaces for each of our VLANS and then assigning them a ip address.<br>
+First we'll start with our routers. We click on our router and head over to the cli tab. Here we create Subinterfaces for each of our VLANS and then assigning them a ip address.<br>
 
 Below we have created and assigned our interface for VLAN 10. We did this by typing in:
 
@@ -116,40 +115,7 @@ For VLAN 30:
 
 ## 
 
-For site router 2 we will be using the next available IPS in the VLANs to assign to our subinterfaces.
-
-For VLAN 10:
-
-#en<br>
-#config t<br>
-#interface gig0/0.10<br>
-#encapsulation dot1Q 10<br>
-#ip address 192.168.10.2 255.255.255.0<br>
-#exit
-
-VLAN 20:
-
-#en<br>
-#config t<br>
-#interface gig0/0.20<br>
-#encapsulation dot1Q 20<br>
-#ip address 192.168.20.2 255.255.255.0<br>
-#exit
-
-VLAN 30:
-
-#en<br>
-#config t<br>
-#interface gig0/0.30<br>
-#encapsulation dot1Q 30<br>
-#ip address 192.168.30.2 255.255.255.0<br>
-#exit<br>
-#do wr<br>
-#exit
-
-##
-
-After making those chnages we can now double check that the sub interfaces are asigned properly and are up. <br>
+After making those changes we can now double check that the sub interfaces are asigned properly and are up. <br>
 We do this by typing in:
 
 #en<br>
@@ -159,19 +125,11 @@ Down below you'll see an example of what it should look like if completed.
 
 ![(8)ipbrief](https://github.com/user-attachments/assets/2794b869-793a-4beb-adec-f251e5f10a6e)
 
-Make sure to check our Site 2 router as well
-
 ##
 
-Next, we create our VLANs on our main switch. We head over to our main switch and head over to the CLI tab. Here we type the following commands.<br>
+Next, we create our VLANs on our main switch connected to our router. We head over to the CLI tab. Here we type the following commands.<br>
 
 For accounting:<br>
-#en<br>
-#config t<br>
-#vlan 10<br> 
-#name accounting<br>
-
-For sales:<br>
 #en<br>
 #config t<br>
 #vlan 10<br> 
@@ -197,21 +155,21 @@ For delivery:<br>
 
 ![(11)delivery vlan](https://github.com/user-attachments/assets/aeb1c39a-b0fc-45c6-baad-8d12e261cf82)
 
-you will wat to make sure all these configurations we are making are also being done to the site 2 main switch.
+you will wat to make sure all these configurations we are making are also being saved(#do wr).
 
 ##
 
-Then we will be enabling trunk mode on our switch which would allow our us to extend VLANs across the entire network. To do this we type:<rb>
+Then we will be enabling trunk mode on our main switch which would allow our us to extend VLANs across the entire network. To do this we type:<rb>
 #en<br>
 #config t<br>
 #interface range fa 0/1-3<br>
 #switchport mode trunk<br>
 
-After this the states of the interfaces will go down but bacl up right after as seen below.
+After this, the states of the interfaces will go down but back up right after as seen below.
 
 ![(13)switchport mode trunk](https://github.com/user-attachments/assets/c218cd0f-9f57-4e60-a318-5797c23ceb79)
 
-make sure we exit and type in 'do wr' to save our changes.
+make sure we exit and save our changes.
 
 ##
 
@@ -239,7 +197,7 @@ Next, on every floor switch we will create our vlans. we go to our switch and ty
 #exit<br>
 #do wr<br>
 
-You can see an example down below. We do this to every floor switch on both sites.
+You can see an example down below. We do this to every switch on each floor.
 
 ![(16)switchvlanscreation](https://github.com/user-attachments/assets/f511e3d5-4ff0-4593-8cd5-d11b7eca4251)
 
@@ -252,7 +210,7 @@ if done correctly we should see our vlans appear. You can see my example below
 
 ##
 
-Now, we move onto assigning our vlans to their ports. We do this for every floor switch. We type: <br>
+Now, we move onto assigning our vlans to their ports. We do this for every switch on each floor. We type: <br>
 #en<br>
 #config t<br>
 #interface fa 0/1<br>
@@ -270,6 +228,9 @@ Now, we move onto assigning our vlans to their ports. We do this for every floor
 #exit<br>
 #do wr<br>
 
+Like below.
+
+![(19)switch2vlansports](https://github.com/user-attachments/assets/7904952f-74da-4fd4-922b-56b7d8c5629c)
 
 We have fa 0/1 for our accounting vlan, fa 0/2 for sales, and fa 0/3 for delivery. This means those specific ports can only be used by their respective vlans.
 
@@ -278,7 +239,6 @@ We have fa 0/1 for our accounting vlan, fa 0/2 for sales, and fa 0/3 for deliver
 we check this by typing: #show vlan brief<br>
 
 Below we can see each vlan we previously created have the ports they were assigned to next to them. We do this for every floor switch on each site 
-
 
 
 ![(20)vlanbriefs2](https://github.com/user-attachments/assets/863e3bcc-81d1-4f75-9802-52f4f4a9b788)
