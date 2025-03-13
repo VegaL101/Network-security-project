@@ -280,10 +280,25 @@ after doing so we should get a reply from PC0 tellling us that we did indeed con
 
 ##
 
+Now we will test if PC3 can reach a PC in another VLAN. To do this we will be configuring PC1
+
+For my IPv4 Address i set it to: 192.168.20.4 (this will be the address for this device)
+
+For Subnet Mask i gave it: 255.255.255.0 ()
+
+For Default Gateway i set it as: 192.168.20.1
+
+Now on PC3 we go back to command prompt and ping PC1 by typing in: ping 192.168.20.4
 
 
 
 
+
+
+
+
+
+  
 
 
 
