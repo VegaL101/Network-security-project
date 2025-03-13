@@ -255,7 +255,23 @@ For Subnet Mask i gave it: 255.255.255.0 ()
 
 For Default Gateway i set it as: 192.168.10.1
 
+It should look similar to below 
 
 ![(28 5)switchaddedandupdated look](https://github.com/user-attachments/assets/0278cc80-6a0e-492a-aa26-9437de6c42a0)
+
+Now i will be configuring PC3 for its IPv4 Address i set it to: 192.168.10.5 (this will be the address for this device)
+
+For Subnet Mask i gave it: 255.255.255.0 ()
+
+For Default Gateway i set it as: 192.168.10.1
+
+It should look similar to below 
+
+![(22)pc3ipconfig](https://github.com/user-attachments/assets/0bf90c22-19c2-4533-be53-a877f668916b)
+
+##
+
+Here is where we will that both PC3 can communicate with PC0
+
 
 
