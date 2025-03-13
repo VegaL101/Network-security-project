@@ -271,7 +271,20 @@ It should look similar to below
 
 ##
 
-Here is where we will that both PC3 can communicate with PC0
+Here we check if PC3 can communicate with PC0. To do this, on PC3 we head over to the desktop tab enter the command promnpt. We type:<br>
+ping 192.168.10.4
+
+after doing so we should get a reply from PC0 tellling us that we did indeed configure our PCs correctly and they have successfully communicated with each other. The reply should look similar to the image below.
+
+![(23)pc3pingpc0](https://github.com/user-attachments/assets/1ad382e0-d885-4263-9c2e-51048a6c2660)
+
+##
+
+
+
+
+
+
 
 
 
