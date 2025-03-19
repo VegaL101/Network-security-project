@@ -290,11 +290,13 @@ For Default Gateway i set it as: 192.168.20.1
 
 Now on PC3 we go back to command prompt and ping PC1 by typing in: ping 192.168.20.4
 
+We will see the message 'request timed out' meaning the ping failed to reach the other PC. You can see an example of how this would look below.
 
+![(24)ping failed](https://github.com/user-attachments/assets/097e5fa5-01e0-463d-aee0-c6b21b8498a1)
 
+##
 
-
-
+In order to ping PC1 from PC3, we need to make a final change to allow inter VLAN routing on our network. We have to go every switch on each floor
 
 
 
