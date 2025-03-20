@@ -298,10 +298,34 @@ We will see the message 'request timed out' meaning the ping failed to reach the
 
 In order to ping PC1 from PC3, we need to make a final change to allow inter VLAN routing on our network. We have to go every switch on each floor
 
+##
 
+To do so, go to our switch and type in the commands:<br>
+#config t<br>
+#interface gig 0/1<br> 
+#switchport mode trunk<br>
+#do wr<br>
+#exit
 
-  
+this will allow our switch on every floor to carry traffic for multiple VLANS. An example should below.
 
+![(26)gatrunkon](https://github.com/user-attachments/assets/7719c203-257b-455f-92dd-5b78a7319a82)
 
+##
 
+We can type:show interface trunk <br>
 
+To check if we did it correctly. it should look like the screenshot below.
+
+![(27)aftertrunkchange](https://github.com/user-attachments/assets/e4733720-23a2-4595-bf8d-de436c5098b0)
+
+##
+Now that weve made those changes we will attempt to ping PC4 from PC0 as shown below.
+
+![(28pc0topc4ping](https://github.com/user-attachments/assets/f2a296af-a214-41b4-8da7-d787d187ed17)
+
+If inter-vlan routing has been set up correctly you should be getting a successful reply back meaning our VLANS can now communicate with each other. This all the Vlans can ping each other successfully then that means everything has been set up correctly which would wrap up the final step for this project.
+
+## summary
+
+In a quick summary we have learned how to configure a switch, router, and PC. we have learned how to create VLANS and assign specifice ports for each VLAN. We also learned how to enable trunkmode on our switches for inter-vlan routing. This type of setup is call a 'router-on-a-steak' network setup. It is ideal for small to medium office spaces that may require multiple VLANS.
