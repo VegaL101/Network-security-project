@@ -1,14 +1,15 @@
-# Network-security-project
+# Inter-VLAN-Routing-Network-project
 
 ## Objective
 
-Our objective is to simulate a network in a 3 floor office building with three VLANs, with one switch per floor. wWhile enhancing their security posture through the implementation of firewalls and DMZs (Demilitarized Zones).
+Our objective is to simulate a small network in a 3 floor office building with three VLANs, with one switch per floor while making sure the end devices on each floor can communicate with each other regardless of what VLAN they are in.
 
 ### Skills Learned
 
 - Learned how to implement VLANs
-- configure firewalls
-- Configure DMZ
+- Assign ports on a switch to specific VLANS
+- IP configuration
+- Enable trunking
 
 ## Steps
 
