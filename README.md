@@ -7,7 +7,7 @@ Our objective is to simulate a small network in a 3 floor office building with t
 ### Skills Learned
 
 - Learned how to implement VLANs
-- Assign ports on a switch to specific VLANS
+- Assign ports on a switch to specific VLANs
 - IP configuration
 - Enable trunking
 
